@@ -1,0 +1,46 @@
+
+<html>
+    <head>
+    <link href="/css/report.css" rel="stylesheet" type="text/css">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    </head>
+    
+    <body>
+        
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="/home">Weather App</a>
+              </div>
+              <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><%=user.fullname%></a></p>
+               
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>
+        
+          <div class="body">
+            <h1>WEATHER REPORT</h1>
+            <br>
+            <div class="content">
+                <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/weather-app-4-906203.png" alt="iamge">
+                <div class="right">
+                    <h2><%=city%></h2>
+                    <h3><%= data.weather[0].main%></h3> <p><%=data.main.temp%> F</p>
+                </div>
+            </div>
+         </div>
+            
+          
+         
+        
+        
+    
+    </body>
+    </html>
+    
+    
+    

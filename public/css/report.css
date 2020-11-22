@@ -1,0 +1,23 @@
+h1{
+   
+    padding-left: 4%;
+}
+  .content{
+    border-style: ridge;
+    width: 400px;
+    display: inline-flex;
+}
+.body{
+    padding-left: 35%;
+    padding-top: 5%;
+}
+.right{
+   
+    padding: 6% 5% 5% 5%;
+}
+img{
+    height: 40%;
+    width: 50%;
+    padding: 5% 5% 5% 5%;
+    
+}
