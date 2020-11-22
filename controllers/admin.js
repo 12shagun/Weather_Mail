@@ -3,8 +3,7 @@ const schedule = require('node-schedule');
 const CronJob =require('node-cron').CronJob;
 const axios = require("axios");
 const bodyParser = require('body-parser');
-const { render } = require("ejs");
-const password = require("../password");
+const secret = require('../secret/secretFile');
 
 bodyParser.urlencoded({ extended: true });
 
@@ -35,7 +34,7 @@ module.exports = function (_, passport) {
                 service: 'gmail',
                 auth: {
                   user: '17uec111@lnmiit.ac.in',
-                  pass: password.password
+                  pass: secret.password
                 }
             });
 
@@ -45,7 +44,7 @@ module.exports = function (_, passport) {
             var j = schedule.scheduleJob(rule,async function(){
                 var data= await axios({
                     method: "GET",
-                    url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=730d4aef694870918a6b4d6a8ecd6732`
+                    url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${secret.key}`
                 }).then(res => {
                     return res.data;
                    }).catch(err => console.log(err));
