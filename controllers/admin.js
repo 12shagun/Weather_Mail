@@ -4,6 +4,8 @@ const CronJob =require('node-cron').CronJob;
 const axios = require("axios");
 const bodyParser = require('body-parser');
 const secret = require('../secret/secretFile');
+require("dotenv").config();
+
 
 bodyParser.urlencoded({ extended: true });
 
