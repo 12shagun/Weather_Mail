@@ -12,7 +12,6 @@ const flash = require('connect-flash');
 const passport = require('passport');
 
 
-
 container.resolve(function (_,admin) {
     mongoose.Promise = global.Promise;
     mongoose.connect('mongodb://localhost/weather_app');
@@ -24,8 +23,11 @@ container.resolve(function (_,admin) {
         const app = express();
         const server = http.createServer(app);
         server.listen(process.env.PORT || 3000,function () {
+            //console.log(process.env.KEY);
+
             console.log("Server started on port 3000!!!");
         });
+
         ConfigureExpress(app);
 
         //Setup Router

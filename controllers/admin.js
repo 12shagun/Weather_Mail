@@ -19,6 +19,7 @@ module.exports = function (_, passport) {
             router.post('/emailService',this.emailService);
         },
         index: function (req, res) {
+           // console.log(process.env.KEY);
             res.render('index');
         },
         getGoogleLogin: passport.authenticate('google', {
@@ -34,7 +35,7 @@ module.exports = function (_, passport) {
                 service: 'gmail',
                 auth: {
                   user: '17uec111@lnmiit.ac.in',
-                  pass: secret.password
+                  pass: process.env.PASSWORD
                 }
             });
 
@@ -44,7 +45,7 @@ module.exports = function (_, passport) {
             var j = schedule.scheduleJob(rule,async function(){
                 var data= await axios({
                     method: "GET",
-                    url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${secret.key}`
+                    url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.KEY}`
                 }).then(res => {
                     return res.data;
                    }).catch(err => console.log(err));
